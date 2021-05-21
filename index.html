@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.83.1">
+    <title>Portfolio of Work</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <style>
+        footer {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="py-2 bg-light border-bottom">
+            <div class="container d-flex flex-wrap">
+                <ul class="nav me-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link link-dark px-2 active" aria-current="page">Code Quiz</a></li>
+                </ul>
+                <ul class="nav">
+                    <!-- <li class="nav-item"><a href="index.html#about" class="nav-link link-dark px-2">About me</a></li>
+                    <li class="nav-item"><a href="index.html#contact" class="nav-link link-dark px-2">Get in touch</a></li> -->
+                    <li class="nav-item"><span class="nav-link px-2"><span id="minutes">04</span>:<span id="seconds">00</span></span></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="py-5 container text-center start">
+            <div class="row py-lg-5">
+                <div class="col-md-8 mx-auto">
+                    <h1 class="fw-light mb-4">Code Quiz</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <input type="button" onclick="document.querySelector('.start').style.display = 'none'; document.querySelector('.q1').style.display = 'block'; start();" class="btn btn-primary my-2 mt-4" value="Start">
+                </div>
+            </div>
+        </section>
+        <section class="py-5 container q1" style="display: none;">
+            <div class="row py-lg-5">
+                <div class="col-md-8 mx-auto">
+                    <p>
+                        Given <em>var x = 3; var y = "3"; x + y</em> returns ...
+                    </p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1" id="q1_a" value="A">
+                        <label class="form-check-label" for="q1_a">6</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1" id="q1_b" value="B">
+                        <label class="form-check-label" for="q1_b">33</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1" id="q1_c" value="C">
+                        <label class="form-check-label" for="q1_c">error</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1" id="q1_d" value="D">
+                        <label class="form-check-label" for="q1_d">undefined</label>
+                    </div>
+                    <input type="button" onclick="check('q1');" class="btn btn-primary my-2 mt-4" value="Next">
+                </div>
+            </div>
+        </section>
+        <section class="py-5 container q2" style="display: none;">
+            <div class="row py-lg-5">
+                <div class="col-md-8 mx-auto">
+                    <p>
+                        Given <em>var x = 0; if (x) { console.log(x) }</em> returns ...
+                    </p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q2" id="q2_a">
+                        <label class="form-check-label" for="q2_a">nothing, since is false</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q2" id="q2_b">
+                        <label class="form-check-label" for="q2_b">false</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q2" id="q2_c">
+                        <label class="form-check-label" for="q2_c">0</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q2" id="q2_d">
+                        <label class="form-check-label" for="q2_d">undefined</label>
+                    </div>
+                    <input type="button" onclick="check('q2');" class="btn btn-primary my-2 mt-4" value="Next">
+                </div>
+            </div>
+        </section>
+        <section class="py-5 container q3" style="display: none;">
+            <div class="row py-lg-5">
+                <div class="col-md-8 mx-auto">
+                    <p>
+                        What would be the result of <em>3+2+"7"</em> ?
+                    </p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q3" id="q3_a">
+                        <label class="form-check-label" for="q3_a">error</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q3" id="q3_b">
+                        <label class="form-check-label" for="q3_b">12</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q3" id="q3_c">
+                        <label class="form-check-label" for="q3_c">57</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q3" id="q3_d">
+                        <label class="form-check-label" for="q3_d">327</label>
+                    </div>
+                    <input type="button" onclick="check('q3');" class="btn btn-primary my-2 mt-4" value="Next">
+                </div>
+            </div>
+        </section>
+        <section class="py-5 container q4" style="display: none;">
+            <div class="row py-lg-5">
+                <div class="col-md-8 mx-auto">
+                    <p>
+                        Given <em>var a = [1, 2, 3];</em> what will this output? <em>console.log(a[6]);</em>
+                    </p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q4" id="q4_a">
+                        <label class="form-check-label" for="q4_a">empty</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q4" id="q4_b">
+                        <label class="form-check-label" for="q4_b">undefined</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q4" id="q4_c">
+                        <label class="form-check-label" for="q4_c">NaN</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q4" id="q4_d">
+                        <label class="form-check-label" for="q4_d">error</label>
+                    </div>
+                    <input type="button" onclick="check('q4');" class="btn btn-primary my-2 mt-4" value="Next">
+                </div>
+            </div>
+        </section>
+        <section class="py-5 container text-center end" style="display: none;">
+            <div class="row py-lg-5">
+                <div class="col-md-8 mx-auto">
+                    <h1 class="fw-light mb-4">Thanks for taking the quiz</h1>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="text-muted text-center py-3">
+        <div class="col-md-8 mx-auto">
+            <span>Code Quiz. Copyright &copy; 2021</span>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
